@@ -53,7 +53,7 @@ def conv_naive(x, w):
                     for i4 in range(Kw):
                         for i5 in range(C):
                             for i6 in range(Kc):
-                                if i1-i3<0 or i2-i4<0 or i1-i3>=H or i2-i4>=W: continue
+                                if i1+i3<0 or i2+i4<0 or i1+i3>=H or i2+i4>=W: continue
                                 y[i0, i1, i2, i6] += x[i0, i1 + i3, i2 + i4, i5] * w[i3,i4,i5,i6]
     return y
 ```
